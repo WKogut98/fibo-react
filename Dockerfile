@@ -3,8 +3,8 @@ FROM node:alpine as build
 ENV NODE_OPTIONS=--openssl-legacy-provider
 WORKDIR '/app'
 COPY package.json .
-RUN npm ci --silent
 RUN npm install --silent
+RUN npm ci --silent
 COPY . .
 RUN npm run build
 
